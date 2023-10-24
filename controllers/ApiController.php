@@ -18,7 +18,7 @@ abstract class ApiController extends Controller
             return null;
         }
         $token = $token_arr[1];
-        $obj = UserToken::find()->with('user')->where(['token' => $token])->andWhere(['!=', 'expired', null])->limit(1)->one();
+        $obj = UserToken::find()->with('user')->where(['token' => $token])->andWhere(['is not', 'expired', null])->limit(1)->one();
         if($obj !== null && strtotime($obj->expired) < time()) {
             return null;
         }

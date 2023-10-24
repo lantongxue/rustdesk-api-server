@@ -5,28 +5,23 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "peer".
+ * This is the model class for table "tags".
  *
  * @property int $id
  * @property int|null $user_id
- * @property string|null $peer_id
- * @property string|null $hash
- * @property string|null $username
- * @property string|null $hostname
- * @property string|null $platform
- * @property string|null $alias
- * @property string|null $tags
+ * @property string|null $tag
+ * @property string|null $color
  * @property string|null $created_at
  * @property string|null $updated_at
  */
-class Peer extends Basic
+class Tags extends Basic
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return '{{%peer}}';
+        return '{{%tags}}';
     }
 
     /**
@@ -37,7 +32,7 @@ class Peer extends Basic
         return [
             [['user_id'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
-            [['peer_id', 'hash', 'username', 'hostname', 'platform', 'alias', 'tags'], 'string', 'max' => 255],
+            [['tag', 'color'], 'string', 'max' => 255],
         ];
     }
 
@@ -49,13 +44,8 @@ class Peer extends Basic
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
-            'peer_id' => 'Peer ID',
-            'hash' => 'Hash',
-            'username' => 'Username',
-            'hostname' => 'Hostname',
-            'platform' => 'Platform',
-            'alias' => 'Alias',
-            'tags' => 'Tags',
+            'tag' => 'Tag',
+            'color' => 'Color',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];

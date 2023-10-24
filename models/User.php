@@ -24,7 +24,7 @@ class User extends Basic
      */
     public static function tableName()
     {
-        return 'user';
+        return '{{%user}}';
     }
 
     /**

@@ -14,7 +14,7 @@ class LoginController extends ApiController
         $request = Yii::$app->request;
 
         $loginForm = new Login();
-        if($loginForm->load($request->post()) && $loginForm->validate()) {
+        if($loginForm->load($request->post(), '') && $loginForm->validate()) {
 
             $user = User::find()->where(['username' => $loginForm->username])->andWhere(['>', 'status', 0])->limit(1)->one();
             if($user === null) {
@@ -46,9 +46,9 @@ class LoginController extends ApiController
                     'is_admin' => false,
                 ]
             ]);
-
         }
-        return $this->asJson(['error' => $loginForm->getErrors()[0][0]]);
+        $error = $loginForm->hasErrors() ? $loginForm->getErrors()[0] : '';
+        return $this->asJson(['error' => $error]);
     }
 
     public function actionLogout()
