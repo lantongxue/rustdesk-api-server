@@ -51,6 +51,16 @@ $config = [
             'rules' => [
                 [
                     'verb' => 'POST',
+                    'pattern' => '/api/heartbeat',
+                    'route' => 'system/heartbeat'
+                ],
+                [
+                    'verb' => 'POST',
+                    'pattern' => '/api/sysinfo',
+                    'route' => 'system/sysinfo'
+                ],
+                [
+                    'verb' => 'POST',
                     'pattern' => '/api/login',
                     'route' => 'login/index'
                 ],

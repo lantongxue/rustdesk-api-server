@@ -1,8 +1,8 @@
 <?php
-
+$sqlite = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'db.sq3';
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'sqlite:/tmp/db.sq3',
+    'dsn' => 'sqlite:'.$sqlite,
 //    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
 //    'username' => 'root',
 //    'password' => '',

@@ -29,6 +29,11 @@ class RegisterController extends Controller
             $name = $username;
         }
 
+        $exists = User::find()->where(['username' => $username])->limit(1)->exists();
+        if($exists) {
+            return $this->asJson(['error' => $username.' used']);
+        }
+
         $user = new User();
         $user->username = $username;
         $user->password = Yii::$app->security->generatePasswordHash($password);
