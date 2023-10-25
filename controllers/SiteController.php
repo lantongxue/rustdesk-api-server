@@ -17,8 +17,8 @@ class SiteController extends Controller
         $request = Yii::$app->request;
 
         $path = Yii::$app->getRuntimePath().DIRECTORY_SEPARATOR.'api.txt';
-        
-        $contents = $request->getAbsoluteUrl() . "\r\n".
+
+        $contents = $request->getMethod() . '  '. $request->getAbsoluteUrl() . "\r\n".
                     '$_GET: ' . print_r($request->get(), true).
                     '$_POST:' . print_r($request->post(), true);
         file_put_contents($path, $contents, FILE_APPEND);
