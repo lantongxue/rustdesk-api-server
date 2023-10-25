@@ -41,7 +41,7 @@ class AddressBookController extends ApiController
         $data = json_encode([
             'tags' => $tags,
             'peers' => $peers,
-            'tag_colors' => json_encode($tag_colors, JSON_UNESCAPED_UNICODE)
+            'tag_colors' => count($tag_colors) === 0 ? null : json_encode($tag_colors, JSON_UNESCAPED_UNICODE)
         ], JSON_UNESCAPED_UNICODE);
         return $this->asJson([
             'licensed_devices' => count($peer_list),
