@@ -44,7 +44,7 @@ class AddressBookController extends ApiController
             'tag_colors' => count($tag_colors) === 0 ? null : json_encode($tag_colors, JSON_UNESCAPED_UNICODE)
         ], JSON_UNESCAPED_UNICODE);
         return $this->asJson([
-            'licensed_devices' => count($peer_list),
+            'licensed_devices' => 0, // 授权管理的设备数量，0=不限制
             'data' => $data,
         ]);
     }
