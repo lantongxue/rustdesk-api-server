@@ -83,4 +83,16 @@ RUN
 ./yii serve
 ~~~
 
-You can now access it at http://localhost:8080
+Now, You can access it at http://localhost:8080
+
+### Create Your Account
+~~~
+http://localhost:8080/register/do?username=<username>&password=<password>&name=<nickname>&email=<email>&note=<note>
+
+- username required
+- password required
+- name optional (It's like a nickname.)
+- email optional
+- note optional
+~~~
+
