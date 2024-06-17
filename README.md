@@ -1,4 +1,8 @@
 <h3 align="center">
+   The project has been upgraded to <a href="https://github.com/lantongxue/rustdesk-api-server-pro">Rustdesk-api-server-pro</a>
+</h3>
+
+<h3 align="center">
    This is an open source rustdesk api server , it is based on the yii2 framework development.
 </h3>
 
